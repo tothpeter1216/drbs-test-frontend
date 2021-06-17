@@ -16,7 +16,6 @@ function App() {
         username,
         password,
       });
-      console.log("login", username, password);
       setUser(response.data);
     } catch (error) {
       console.log(error);
