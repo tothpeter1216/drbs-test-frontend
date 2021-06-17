@@ -1,8 +1,14 @@
 import React, { useState } from "react";
 
-const LoginForm = ({ handleLogin }) => {
+const Registration = ({ handleRegistration }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+
+  const handleRegistrationSubmit = (e) => {
+    e.preventDefault();
+    console.log("registration", username, password);
+    handleRegistration(username, password);
+  };
 
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
@@ -12,15 +18,8 @@ const LoginForm = ({ handleLogin }) => {
     setPassword(e.target.value);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    handleLogin(username, password);
-    setUsername("");
-    setPassword("");
-  };
-
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleRegistrationSubmit}>
       <label htmlFor="username">Felhasználónév: </label>
       <input
         type="text"
@@ -37,9 +36,9 @@ const LoginForm = ({ handleLogin }) => {
         id=""
         onChange={handlePasswordChange}
       />
-      <button type="submit">Bejelentkezés</button>
+      <button type="submit">Regisztráció</button>
     </form>
   );
 };
 
-export default LoginForm;
+export default Registration;
