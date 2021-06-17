@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import Home from "./containers/Home";
 import Registration from "./containers/Registration";
+import Navbar from "./components/Navbar";
 
 function App() {
   const [user, setUser] = useState();
@@ -38,6 +39,7 @@ function App() {
 
   return (
     <div className="App">
+      <Navbar />
       <Home handleLogin={handleLogin} user={user} handleLogout={handleLogout} />
       <Registration handleRegistration={handleRegistration} />
     </div>

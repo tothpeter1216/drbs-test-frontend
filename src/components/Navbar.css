@@ -1,0 +1,19 @@
+.navbar {
+  background-color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  margin-bottom: 50px;
+}
+
+.navbar .navbar-item {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 10px;
+}
+
+.navbar .navbar-item:hover {
+  border-bottom: 1px solid white;
+}
