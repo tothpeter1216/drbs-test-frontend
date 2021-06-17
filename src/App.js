@@ -1,10 +1,27 @@
 import "./App.css";
-import LoginPage from "./containers/LoginPage";
+import React, { useState } from "react";
+import axios from "axios";
+import Home from "./containers/Home";
 
 function App() {
+  const [user, setUser] = useState();
+
+  const handleLogin = async (username, password) => {
+    try {
+      const response = await axios.post("http://localhost:3001/login", {
+        username,
+        password,
+      });
+      console.log("login", username, password);
+      setUser(response);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className="App">
-      <LoginPage />
+      <Home handleLogin={handleLogin} user={user} />
     </div>
   );
 }

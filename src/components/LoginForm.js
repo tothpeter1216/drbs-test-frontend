@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const LoginForm = () => {
+const LoginForm = ({ handleLogin }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -12,8 +12,15 @@ const LoginForm = () => {
     setPassword(e.target.value);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handleLogin(username, password);
+    setUsername("");
+    setPassword("");
+  };
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <label htmlFor="username">Username: </label>
       <input
         type="text"
@@ -30,6 +37,7 @@ const LoginForm = () => {
         id=""
         onChange={handlePasswordChange}
       />
+      <button type="submit">Bejelentkezés</button>
     </form>
   );
 };
