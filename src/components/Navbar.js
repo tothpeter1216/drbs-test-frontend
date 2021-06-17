@@ -1,15 +1,25 @@
 import React from "react";
 import "./Navbar.css";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useRouteMatch,
+  useParams,
+} from "react-router-dom";
 
 const Navbar = () => {
   return (
     <nav className="navbar">
-      <a href="/" className="navbar-item">
-        Titkok
-      </a>
-      <a href="/registration" className="navbar-item">
-        Regisztráció
-      </a>
+      <ul>
+        <li className="navbar-item">
+          <Link to="/">Titkok</Link>
+        </li>
+        <li>
+          <Link to="/registration">Regisztráció</Link>
+        </li>
+      </ul>
     </nav>
   );
 };

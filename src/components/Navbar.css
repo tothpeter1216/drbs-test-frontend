@@ -7,13 +7,18 @@
   margin-bottom: 50px;
 }
 
-.navbar .navbar-item {
+.navbar ul {
+  display: flex;
+  list-style: none;
+}
+
+.navbar ul a {
   color: white;
   text-decoration: none;
   text-transform: uppercase;
   padding: 10px;
 }
 
-.navbar .navbar-item:hover {
+.navbar ul a:hover {
   border-bottom: 1px solid white;
 }

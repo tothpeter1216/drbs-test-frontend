@@ -5,6 +5,8 @@ import Home from "./containers/Home";
 import Registration from "./containers/Registration";
 import Navbar from "./components/Navbar";
 
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
 function App() {
   const [user, setUser] = useState();
 
@@ -39,9 +41,21 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar />
-      <Home handleLogin={handleLogin} user={user} handleLogout={handleLogout} />
-      <Registration handleRegistration={handleRegistration} />
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route path="/" exact>
+            <Home
+              handleLogin={handleLogin}
+              user={user}
+              handleLogout={handleLogout}
+            />
+          </Route>
+          <Route path="/registration" exact>
+            <Registration handleRegistration={handleRegistration} />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
