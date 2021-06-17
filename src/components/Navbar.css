@@ -1,14 +1,17 @@
 .navbar {
   background-color: #222;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   height: 50px;
   margin-bottom: 50px;
 }
 
 .navbar ul {
+  margin: 0 5%;
+  width: 100%;
   display: flex;
+  justify-content: space-between;
   list-style: none;
 }
 

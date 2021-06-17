@@ -9,16 +9,18 @@ import {
   useParams,
 } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ user }) => {
   return (
     <nav className="navbar">
       <ul>
         <li className="navbar-item">
           <Link to="/">Titkok</Link>
         </li>
-        <li>
-          <Link to="/registration">Regisztráció</Link>
-        </li>
+        {!user && (
+          <li>
+            <Link to="/registration">Regisztráció</Link>
+          </li>
+        )}
       </ul>
     </nav>
   );

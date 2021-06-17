@@ -20,25 +20,28 @@ const LoginForm = ({ handleLogin }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="username">Felhasználónév: </label>
-      <input
-        type="text"
-        name="username"
-        value={username}
-        id=""
-        onChange={handleUsernameChange}
-      />
-      <label htmlFor="password">Jelszó: </label>
-      <input
-        type="text"
-        name="password"
-        value={password}
-        id=""
-        onChange={handlePasswordChange}
-      />
-      <button type="submit">Bejelentkezés</button>
-    </form>
+    <div>
+      <h1>Bejelentkezés</h1>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="username">Felhasználónév: </label>
+        <input
+          type="text"
+          name="username"
+          value={username}
+          id=""
+          onChange={handleUsernameChange}
+        />
+        <label htmlFor="password">Jelszó: </label>
+        <input
+          type="text"
+          name="password"
+          value={password}
+          id=""
+          onChange={handlePasswordChange}
+        />
+        <button type="submit">Bejelentkezés</button>
+      </form>
+    </div>
   );
 };
 
