@@ -5,17 +5,20 @@ import Home from "./containers/Home";
 import Registration from "./containers/Registration";
 import Navbar from "./components/Navbar";
 
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   const [user, setUser] = useState();
 
   const handleLogin = async (username, password) => {
     try {
-      const response = await axios.post("http://localhost:3001/login", {
-        username,
-        password,
-      });
+      const response = await axios.post(
+        "http://localhost:3001/api/users/login",
+        {
+          username,
+          password,
+        }
+      );
       setUser(response.data);
     } catch (error) {
       console.log(error);
@@ -28,11 +31,10 @@ function App() {
 
   const handleRegistration = async (username, password) => {
     try {
-      const response = await axios.post("http://localhost:3001/users", {
+      const response = await axios.post("http://localhost:3001/api/users", {
         username,
         password,
       });
-      console.log(response);
     } catch (error) {
       console.log(error);
     }

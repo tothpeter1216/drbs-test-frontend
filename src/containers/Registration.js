@@ -9,7 +9,6 @@ const Registration = ({ handleRegistration }) => {
 
   const handleRegistrationSubmit = (e) => {
     e.preventDefault();
-    console.log("registration", username, password);
     handleRegistration(username, password);
     history.push("/");
   };

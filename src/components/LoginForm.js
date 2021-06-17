@@ -30,6 +30,7 @@ const LoginForm = ({ handleLogin }) => {
           value={username}
           id=""
           onChange={handleUsernameChange}
+          required
         />
         <label htmlFor="password">Jelszó: </label>
         <input
@@ -38,6 +39,7 @@ const LoginForm = ({ handleLogin }) => {
           value={password}
           id=""
           onChange={handlePasswordChange}
+          required
         />
         <button type="submit">Bejelentkezés</button>
       </form>
