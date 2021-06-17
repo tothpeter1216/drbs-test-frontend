@@ -19,9 +19,13 @@ function App() {
     }
   };
 
+  const handleLogout = () => {
+    setUser();
+  };
+
   return (
     <div className="App">
-      <Home handleLogin={handleLogin} user={user} />
+      <Home handleLogin={handleLogin} user={user} handleLogout={handleLogout} />
     </div>
   );
 }
